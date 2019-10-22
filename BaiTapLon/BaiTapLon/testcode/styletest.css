@@ -1,0 +1,18 @@
+.container{
+    position: relative;
+}
+.content{
+    position:absolute;
+    height:200px;
+    width:300px;
+    top:0px;
+    opacity: 0;
+    text-align:center;
+}
+.content:hover{
+    opacity:0.5;
+    background-color:rgb(73, 68, 68);
+    transition:0.5s;
+    color:white;
+
+}

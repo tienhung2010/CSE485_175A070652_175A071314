@@ -1,0 +1,138 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+/*css tiêu đề trái*/
+.div-title{
+    background-color:rgb(247, 62, 62);
+    color:white;
+    height: 35px;
+}
+.MenuLeft .title-left{
+    position: relative;
+}
+.MenuLeft .title-left li{
+    list-style-type: none;
+    display: inline-table;
+    height:35px;
+    line-height:35px;
+    padding-left:10px;
+    margin-left: -5px;
+}
+.MenuLeft .title-left li a{
+    color:white;
+    
+}
+.MenuLeft .title-left li .DanhSachTruong{
+    display: none;
+    width:300px;
+    background-color:white;
+    z-index:10;
+}
+.MenuLeft .title-left li .DanhSachTruong a{
+    color:red;
+}
+.MenuLeft .title-left li .DanhSachKhoa{
+    z-index:10;
+    display: none;
+    width:250px;
+    background-color:white;
+    
+}
+.MenuLeft .title-left li .DanhSachKhoa a{
+    color:red;
+}
+.MenuLeft .title-left li .DanhSachVien{
+    display: none;
+    width:400px;
+    background-color:white;
+    z-index:10;
+   
+}
+.MenuLeft .title-left li .DanhSachVien a{
+    color:red;
+}
+.MenuLeft .title-left li .DanhSachTrungTam{
+    display:none;
+    width:400px;
+    background-color:white;
+    z-index:10;
+}
+.MenuLeft .title-left li .DanhSachTrungTam a{
+    color:red;
+}
+.MenuLeft .title-left li:hover .DanhSachTruong{
+    display:block;
+    position: absolute;
+}
+.MenuLeft .title-left li:hover .DanhSachKhoa{
+    display:block;
+    position: absolute;
+}
+.MenuLeft .title-left li:hover .DanhSachVien{
+    display:block;
+    position: absolute;
+}
+.MenuLeft .title-left li:hover .DanhSachTrungTam{
+    display:block;
+    position: absolute;
+}
+/*css tiêu đề trái*/
+
+/*css tiêu đề phải*/
+.title-right{
+    float:right;
+}
+.title-right li{
+    list-style-type:none;
+    display: inline-table;
+    line-height:35px;
+    padding-left:10px;
+}
+.title-right li a{
+    color:white;
+}
+/*css tiêu đề phải*/
+
+/*css img header*/
+.container-img{
+    background-color:rgb(253, 227, 179);
+}
+.img{
+    z-index: 5;
+}
+.img-left img{
+width:340px;
+height:61.88px;
+margin-left:50px;
+}
+.img-right img{
+    width:380px;
+    height:92px;
+    float:right;
+    margin-right:50px;
+}
+/*css img header*/
+
+/*css menu*/
+.menu-right{
+    background-color:white;
+    
+}
+.list-menu{
+    margin-left:120px;
+}
+.menu-right .list-menu li{
+    list-style-type:none;
+    display:inline-table;
+    padding-left:15px;
+    padding-top:10px
+}
+.menu-right .list-menu a{
+    color:black;
+    font-weight: 500;
+    font-size:19px;
+}

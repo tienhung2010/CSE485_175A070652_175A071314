@@ -1,0 +1,134 @@
+const h = $(window).height() - 200;
+
+const $elm = $('.div-imgCauHoi');
+for(let i=0; i< $elm.length; i++) {
+    if($(document).scrollTop() >= ($($elm[i]).offset().top - h) && $($elm[i]).hasClass('zoomIn') == false){
+        $($elm[i]).addClass('my-zoomIn');
+    }
+    if($(document).scrollTop() < ($($elm[i]).offset().top - h) && $($elm[i]).hasClass('zoomIn') == true){
+        $($elm[i]).removeClass('my-zoomIn');
+    }
+}
+
+
+.div-imgCauHoi {
+    text-align: center;
+    -webkit-transition: all 500ms ease-out;
+    -moz-transition: all 500ms ease-out;
+    -o-transition: all 500ms ease-out;
+    transition: all 500ms ease-out;
+
+}
+
+.div-imgCauHoi.my-zoomIn {
+    transform: scale(1);
+    opacity: 1;
+}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+        <div class="row">
+          <div class="col-md-12 slide-cauhoi1">
+            <div class="row slide-top">
+              <div class="col-md-4">
+                <div class="div-imgCauHoi">
+                  <img alt="Bootstrap Image  tuonglai1" src="./images/tuonglai1.jpg" />
+                </div>
+                <div class="div-contentCauHoi">
+                  <a class="a-cauhoi" href="#"> 1-TDTU là đại học số 1 Việt Nam và Top 1000 đại học hàng đầu thế giới </a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="div-imgCauHoi">
+                  <img alt="Bootstrap Image " src="./images/tuonglai2.jpg" />
+                </div>
+                <div class="div-contentCauHoi">
+                  <a class="a-cauhoi" href="#">2-Điều kiện, phương pháp dạy và học chuyên dụng, hiện đại </a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="div-imgCauHoi">
+                  <img alt="Bootstrap Image " src="./images/tuonglai3.jpg" />
+                </div>
+                <div class="div-contentCauHoi">
+                  <a class="a-cauhoi" href="#">3-Lực lượng chuyên môn hùng mạnh và chuyên nghiệp </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid"><!--slide dưới-->
+            <div class="row slide-cauhoi2">
+              <div class="col-md-3">
+                 <div class="div-imgCauHoi2">
+                    <img alt="Bootstrap Image hihii" src="./images/tuonglai4.jpg" />
+                  </div>
+                  <div class="div-contentCauHoi2">
+                    <a class="a-cauhoi" href="#">4-Chương trình giáo dục đại học và sau đại học tiên tiến </a>
+                </div>
+              </div>
+              <div class="col-md-3">
+                 <div class="div-imgCauHoi2">
+                    <img alt="Bootstrap Image " src="./images/tuonglai5.jpg" />
+                  </div>
+                  <div class="div-contentCauHoi2">
+                    <a class="a-cauhoi" href="#">5-Môi trường học tập tiêu chuẩn quốc tế 5 sao </a>
+                </div>
+              </div>
+              <div class="col-md-3">
+                 <div class="div-imgCauHoi2">
+                    <img alt="Bootstrap Image " src="./images/tuonglai6.jpg" />
+                  </div>
+                  <div class="div-contentCauHoi2">
+                    <a class="a-cauhoi" href="#">6-Chuẩn đầu ra của giáo dục đạt tầm quốc tế </a>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="div-imgCauHoi2">
+                    <img alt="Bootstrap Image " src="./images/tuonglai7.jpg" />
+                  </div>
+                  <div class="div-contentCauHoi2">
+                    <a class="a-cauhoi" href="#">7-Môi trường rèn luyện tốt nhất </a>
+                </div>
+              </div>
+            </div>
+          </div><!--slide dưới-->
+        </div>
+
+
+        <div class="container-fluid container-SVTDTU"><!--background-img-->
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="background-img">
+                      <div class="title-btn">
+                          <div class="title-background">
+                              <h2>
+                                  <span>Chuyên trang sinh viên TDTU</span>
+                              </h2>
+                          </div>
+                          <div class="title-background2">
+                             <a href="#"><button type="button" class="btn btn-danger">CLick here</button></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div><!--background-img-->
+
+
+</body>
+</html>

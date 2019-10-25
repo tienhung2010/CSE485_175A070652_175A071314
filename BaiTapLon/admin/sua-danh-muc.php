@@ -1,22 +1,15 @@
 
-
-
-
-
-
-
-
 <?php include("header.php") ?>
 <?php
 include ("connect.php");
 
 
-$result=$con->prepare("SELECT admin.iddangnhap,admin.admin_user,danhmuc.iddanhmuc,danhmuc.tendanhmuc,danhmuc.mota,danhmuc.iddangnhap,danhmuc.ngaydang,danhmuc.idtinhtrang,tinhtrang.idtinhtrang,tinhtrang.tentinhtrang FROM admin,danhmuc,tinhtrang where admin.iddangnhap=danhmuc.iddangnhap and danhmuc.idtinhtrang=tinhtrang.idtinhtrang and danhmuc.iddanhmuc='{$_GET['per_id']}'");
+$result=$con->prepare("SELECT dangnhap.iddangnhap,dangnhap.tendangnhap,danhmuc.iddanhmuc,danhmuc.tendanhmuc,danhmuc.mota,danhmuc.iddangnhap,danhmuc.ngaydang,danhmuc.idtinhtrang,tinhtrang.idtinhtrang,tinhtrang.tentinhtrang FROM dangnhap,danhmuc,tinhtrang where dangnhap.iddangnhap=danhmuc.iddangnhap and danhmuc.idtinhtrang=tinhtrang.idtinhtrang and danhmuc.iddanhmuc='{$_GET['per_id']}'");
 $result->execute();
 $fetch = $result->fetchall(); 
 
 foreach ($fetch as $key => $row) {
-    $per_id = $row['iddanhmuc'];
+    $iddanhmuc = $row['iddanhmuc'];
     $tendanhmuc = $row['tendanhmuc'];
     $mota = $row['mota']; 
     $ngaydang = $row['ngaydang']; 
@@ -27,7 +20,7 @@ foreach ($fetch as $key => $row) {
     <section class="content">
         <div class="container-fluid">
                <!-- Input Group -->
-     
+      <form action="sua-danh-muc.php" method="POST" enctype="multipart/form-data" name="form1" id="form1">
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
@@ -53,7 +46,7 @@ foreach ($fetch as $key => $row) {
                                                 </div>
                                         </div>
                                     </div>
-
+ <input type="hidden" class="form-control" name="iddanhmuc" placeholder="Mã Danh Mục" value="<?php echo $row['iddanhmuc']; ?>">
                                      <div class="col-md-4">
                                         <div class="input-group">
                                             <span class="input-group-addon">
@@ -97,19 +90,30 @@ foreach ($fetch as $key => $row) {
                                                 Người Đăng:
                                             </span>
                                                 <div class="form-line">
-                                                    <?php echo $row['admin_user']; ?>
+                                                    <?php echo $row['tendangnhap']; ?>
                                                 </div>
                                         </div>
                                     </div>
 
-                                     <div class="col-md-6">
+                                   <div class="col-md-6">
                                         <div class="input-group">
                                             <span class="input-group-addon">
                                                 Tình Trạng:
                                             </span>
-                                                <div class="form-line">
-                                                 <?php echo $row['tentinhtrang']; ?>
-                                                </div>
+                                               <select class="form-control" name="tinhtrang">
+                                    <?php
+                                        include("connect.php"); 
+                                        $personnel = $con->prepare("SELECT * FROM tinhtrang ORDER BY idtinhtrang");
+                                        $personnel->execute();
+                                        while($row = $personnel->fetch()) {
+                                            $idtinhtrang = $row['idtinhtrang'];
+                                            $tentinhtrang = $row['tentinhtrang'];
+                                           
+                                    ?>
+                                    <option value="<?php echo $idtinhtrang ?>"><?php echo $tentinhtrang?></option>
+                                     
+                                    <?php } ?>
+                                    </select>
                                         </div>
                                     </div>
                                                
@@ -117,15 +121,11 @@ foreach ($fetch as $key => $row) {
                                        <input type="submit" name="update" value="Sửa Danh Mục" class="btn btn-success">  
                                 </div>
  <div class="col-md-4">
-                                       <a class="btn btn-success btn-sm" href="xem_don_hang.php?per_id=<?php echo $row['iddonhang']?>">
-                                      <span class = "glyphicon glyphicon-remove">Xóa Đơn Hàng</span>
-                                    </a>  
+                                       <input type="submit" name="delete" value="Xóa Danh Mục" class="btn btn-success">
                                 </div>
-                                 <div class="col-md-4">
-                                       <?php include('sua-tinh-trang-danh-muc.php'); ?>
-                                     
-                                    </a>  
-                                </div>
+
+                                  </form>
+                                
 
                                 </div>
                             </div>
@@ -145,3 +145,28 @@ foreach ($fetch as $key => $row) {
   <?php include("script.php"); ?>
 
  
+ <?php
+if(isset($_POST['update'])) {
+   
+
+   
+    $iddanhmuc =  $_POST['iddanhmuc'];
+    $tendanhmuc2 = $_POST['tendanhmuc'];
+    $mota2 = $_POST['mota']; 
+  
+    $tinhtrang = $_POST['tinhtrang'];
+
+    $add_personnel = $con->prepare("UPDATE danhmuc SET tendanhmuc = ?, mota = ?, ngaydang = NOW(), idtinhtrang = ? WHERE iddanhmuc = ?");
+    $add_personnel->execute(array($tendanhmuc2, $mota2,$tinhtrang, $iddanhmuc));
+     echo '<script>window.location.href=("danh-muc-bai-viet.php");</script>'; // chuyển trang
+}
+    ?>
+ <?php
+if(isset($_POST['delete'])) {
+   
+   $iddanhmuc =  $_POST['iddanhmuc'];
+    $delete = $con->prepare("DELETE FROM danhmuc WHERE iddanhmuc = '$iddanhmuc'");
+    $delete->execute();
+     echo '<script>window.location.href=("danh-muc-bai-viet.php");</script>'; // chuyển trang
+ }
+    ?>

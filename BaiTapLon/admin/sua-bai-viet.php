@@ -11,7 +11,7 @@
 include ("connect.php");
 
 
-$result=$con->prepare("SELECT admin.iddangnhap,admin.admin_user,danhmuc.iddanhmuc,danhmuc.tendanhmuc,tintuc.idtintuc,tintuc.tieude,tintuc.noidung,tintuc.ngayviet,tintuc.iddanhmuc,tintuc.iddangnhap,tintuc.idtinhtrang,tinhtrang.idtinhtrang,tinhtrang.tentinhtrang FROM admin,tintuc,tinhtrang,danhmuc where admin.iddangnhap=tintuc.iddangnhap and tintuc.idtinhtrang=tinhtrang.idtinhtrang  and danhmuc.iddanhmuc=tintuc.iddanhmuc and tintuc.idtintuc='{$_GET['per_id']}'");
+$result=$con->prepare("SELECT dangnhap.iddangnhap,dangnhap.tendangnhap,danhmuc.iddanhmuc,danhmuc.tendanhmuc,tintuc.idtintuc,tintuc.tieude,tintuc.noidung,tintuc.ngayviet,tintuc.iddanhmuc,tintuc.iddangnhap,tintuc.idtinhtrang,tinhtrang.idtinhtrang,tinhtrang.tentinhtrang,tintuc.idhinhanh,thuvien.idhinhanh,thuvien.tenanh FROM dangnhap,tintuc,tinhtrang,danhmuc,thuvien where dangnhap.iddangnhap=tintuc.iddangnhap and tintuc.idtinhtrang=tinhtrang.idtinhtrang  and danhmuc.iddanhmuc=tintuc.iddanhmuc and tintuc.idhinhanh=thuvien.idhinhanh and tintuc.idtintuc='{$_GET['per_id']}'");
 $result->execute();
 $fetch = $result->fetchall(); 
 
@@ -22,8 +22,9 @@ foreach ($fetch as $key => $row) {
     $ngayviet = $row['ngayviet']; 
     $danhmuc = $row['tentinhtrang']; 
     $hinhanh = $row['tentinhtrang'];
-    $nguoidang = $row['admin_user'];
+    $nguoidang = $row['tendangnhap'];
     $tinhtrang = $row['tentinhtrang'];
+ $tenanh = $row['tenanh'];
 
 ?>
     <link href="css/style2.css" rel="stylesheet">
@@ -64,7 +65,7 @@ foreach ($fetch as $key => $row) {
     <section class="content">
         <div class="container-fluid">
                <!-- Input Group -->
-     
+           <form action="sua-bai-viet.php" method="POST" enctype="multipart/form-data" name="form1" id="form1">
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
@@ -86,8 +87,9 @@ foreach ($fetch as $key => $row) {
                                                 Mã Bài Viết:
                                             </span>
                                                 <div class="form-line">
-                                                    <?php echo $row['iddanhmuc']; ?>
+                                                    <?php echo $row['idtintuc']; ?>
                                                 </div>
+        <input type="hidden" class="form-control" name="idtintuc" placeholder="Mã Bài Viết" value="<?php echo $row['idtintuc']; ?>">
                                         </div>
                                     </div>
 
@@ -99,10 +101,11 @@ foreach ($fetch as $key => $row) {
                                                 <div class="form-line">
 
                                                 <input type="text" class="form-control" name="ngayviet" placeholder="Ngày Đăng" value="<?php echo $row['ngayviet']; ?>">
-                                                </div>
-                                        </div>
+                                                <
                                     </div>
-                                  
+                                        </div>
+
+                                  </div>
 
 
                                     <div class="col-md-12">
@@ -111,7 +114,7 @@ foreach ($fetch as $key => $row) {
                                                 Tiêu Đề :
                                             </span>
                                                 <div class="form-line">
-                                            <input type="text" class="form-control" name="tieude" placeholder="Tên Danh Mục" value="<?php echo $row['tieude']; ?>">
+                                            <input type="text" class="form-control" name="tieude" placeholder="Tiêu đề bài viết" value="<?php echo $row['tieude']; ?>">
                                                 </div>
                                         </div>
                                     </div>
@@ -127,7 +130,7 @@ foreach ($fetch as $key => $row) {
 
  <div id="sample">
 
-  <textarea  name="mota"  id="mota" type="text" style="width:660px;height:200px;color: #ffffff"
+  <textarea  name="noidung"  id="mota" type="text" style="width:660px;height:200px;color: #ffffff"
 
 placeholder="Mô tả bài viết"><?php echo $row['noidung']; ?></textarea>
 
@@ -143,7 +146,8 @@ placeholder="Mô tả bài viết"><?php echo $row['noidung']; ?></textarea>
                                                 Ảnh Đại diện:
                                             </span>
                                                 <div class="form-line">
-                                                    <?php echo $row['admin_user']; ?>
+                                                    <img src="<?php echo $tenanh; ?>" style="width: 100px; height: 80px;"> <br>
+                                         <?php include('sua-hinh-anh-bai-viet.php'); ?>
                                                 </div>
                                         </div>
                                     </div>
@@ -153,9 +157,20 @@ placeholder="Mô tả bài viết"><?php echo $row['noidung']; ?></textarea>
                                             <span class="input-group-addon">
                                                 Danh Mục:
                                             </span>
-                                                <div class="form-line">
-                                                 <?php echo $row['tentinhtrang']; ?>
-                                                </div>
+                                               <select class="form-control" name="chondanhmuc">
+                                    <?php
+                                        include("connect.php"); 
+                                        $danhmucc = $con->prepare("SELECT * FROM danhmuc where idtinhtrang = 1 ORDER BY iddanhmuc");
+                                        $danhmucc->execute();
+                                        while($row = $danhmucc->fetch()) {
+                                            $iddanhmuc = $row['iddanhmuc'];
+                                            $tendanhmuc = $row['tendanhmuc'];
+                                           
+                                    ?>
+                                    <option value="<?php echo $iddanhmuc ?>"><?php echo $tendanhmuc?></option>
+                                     
+                                    <?php } ?>
+                                    </select>
                                         </div>
                                     </div>
 
@@ -165,7 +180,9 @@ placeholder="Mô tả bài viết"><?php echo $row['noidung']; ?></textarea>
                                                 Người Đăng:
                                             </span>
                                                 <div class="form-line">
-                                                    <?php echo $row['admin_user']; ?>
+                                                <?php echo $nguoidang  ?>
+
+                                                    
                                                 </div>
                                         </div>
                                     </div>
@@ -175,9 +192,24 @@ placeholder="Mô tả bài viết"><?php echo $row['noidung']; ?></textarea>
                                             <span class="input-group-addon">
                                                 Tình Trạng:
                                             </span>
-                                                <div class="form-line">
-                                                 <?php echo $row['tentinhtrang']; ?>
-                                                </div>
+                                               <select class="form-control" name="chontinhtrang">
+                                    <?php
+                                        include("connect.php"); 
+                                        $tinhtrangc = $con->prepare("SELECT * FROM tinhtrang ORDER BY idtinhtrang");
+                                        $tinhtrangc->execute();
+                                        while($row = $tinhtrangc->fetch()) {
+                                            $idtinhtrang = $row['idtinhtrang'];
+                                            $tentinhtrang = $row['tentinhtrang'];
+                                           
+                                    ?>
+                                    <option value="<?php echo $idtinhtrang ?>"><?php echo $tentinhtrang?></option>
+                                     
+                                    <?php } ?>
+                                    </select>
+
+
+
+
                                         </div>
                                     </div>
                                                
@@ -185,16 +217,10 @@ placeholder="Mô tả bài viết"><?php echo $row['noidung']; ?></textarea>
                                        <input type="submit" name="update" value="Sửa Bài Viết" class="btn btn-success">  
                                 </div>
  <div class="col-md-4">
-                                       <a class="btn btn-success btn-sm" href="xoa-bai-viet.php?per_id=<?php echo $row['iddonhang']?>">
-                                      <span class = "glyphicon glyphicon-remove">Xóa Bài Viết</span>
-                                    </a>  
+                                     <input type="submit" name="delete" value="Xóa Bài Viết" class="btn btn-success"> 
                                 </div>
-                                 <div class="col-md-4">
-                                       <?php include('sua-tinh-trang-danh-muc.php'); ?>
-                                     
-                                    </a>  
-                                </div>
-
+                               
+</form>
                                 </div>
                             </div>
                         </div>
@@ -213,3 +239,32 @@ placeholder="Mô tả bài viết"><?php echo $row['noidung']; ?></textarea>
   <?php include("script.php"); ?>
 
  
+ <?php
+if(isset($_POST['update'])) {
+   
+
+   
+    $idtintuc =  $_POST['idtintuc'];
+    $suatieude = $_POST['tieude'];
+    $suanoidung = $_POST['noidung']; 
+   
+    $suadanhmuc = $_POST['chondanhmuc']; 
+    $suatinhtrang = $_POST['chontinhtrang'];
+    $suahinhanh = $_POST['chontinhtrang'];
+    $iddangnhap = $_POST['chontinhtrang'];
+
+    $suatintuc = $con->prepare("UPDATE tintuc SET tieude = ?, noidung = ?, iddanhmuc = ?,idtinhtrang = ? WHERE idtintuc = ?");
+    $suatintuc->execute(array($suatieude,$suanoidung,$suadanhmuc, $suatinhtrang,$idtintuc));
+     echo '<script>window.location.href=("tat-ca-bai-viet.php");</script>'; // chuyển trang 
+
+}
+    ?>
+ <?php
+if(isset($_POST['delete'])) {
+   
+   $idbaiviet =  $_POST['idbaiviet'];
+    $delete = $con->prepare("DELETE FROM baiviet WHERE baiviet = '$iddanhmuc'");
+    $delete->execute();
+     echo '<script>window.location.href=("tat-ca-bai-viet.php");</script>'; // chuyển trang
+ }
+    ?>

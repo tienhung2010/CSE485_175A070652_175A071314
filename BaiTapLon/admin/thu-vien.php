@@ -39,7 +39,7 @@ include("header.php")
                                 <?php 
                                     include('connect.php');
 
-                                    $stmt=$con->prepare("SELECT * FROM tbl_files");
+                                    $stmt=$con->prepare("SELECT * FROM thuvien");
                                     $stmt->execute();
                                     if($stmt->rowCount() > 0) {
 
@@ -50,7 +50,7 @@ include("header.php")
                                 <div class="files">
                                 <form method="POST" action="" >
                                     <a href="thu-vien.php?idhinhanh=<?php echo $idhinhanh; ?>"><img src="<?php echo $tenanh; ?>" style="width: 100px; height: 80px; padding: 5px;"><br>
-                                    <p><?php echo $per_firstname . " " . $per_lastname; ?></p></a>
+                                    <p></p></a>
                                 </div>
                                 </form>
                                 <?php } } ?>
@@ -73,7 +73,7 @@ include("header.php")
                                         <tbody>
                                         <?php
                                 if (isset($_GET['idhinhanh'])){
-                                $stmt=$con->prepare("SELECT * FROM tbl_files  where idhinhanh = '{$_GET['idhinhanh']}'");
+                                $stmt=$con->prepare("SELECT * FROM thuvien  where idhinhanh = '{$_GET['idhinhanh']}'");
                                     $stmt->execute();
                                     if($stmt->rowCount() > 0) {
 
@@ -93,7 +93,7 @@ include("header.php")
                                      <?php } else { ?>
 
                                     <div class = "panel-heading">
-                                        <h5>Nothing Selected</h5>
+                                        <h5>Không có ảnh được chọn</h5>
                                     </div>
                                      <?php }
                                      ?>

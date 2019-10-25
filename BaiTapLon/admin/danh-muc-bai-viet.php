@@ -29,15 +29,13 @@
                                         <td width="20%">Tác Giả</td>
                                         <td width="15%">Ngày Đăng</td>
                                         <td width="15%">Tình Trạng</td>
-                                        
-                                       
                                     </tr>
                                 </thead>
                                 <tbody>
                                 
                                   <?php
                                     include('connect.php');
-                                    $display = $con->prepare("SELECT admin.iddangnhap,admin.admin_user,danhmuc.iddanhmuc,danhmuc.tendanhmuc,danhmuc.mota,danhmuc.iddangnhap,danhmuc.ngaydang,danhmuc.idtinhtrang,tinhtrang.idtinhtrang,tinhtrang.tentinhtrang FROM admin,danhmuc,tinhtrang where admin.iddangnhap=danhmuc.iddangnhap and danhmuc.idtinhtrang=tinhtrang.idtinhtrang  ORDER BY iddanhmuc ASC");
+                                    $display = $con->prepare("SELECT dangnhap.iddangnhap,dangnhap.tendangnhap,danhmuc.iddanhmuc,danhmuc.tendanhmuc,danhmuc.mota,danhmuc.iddangnhap,danhmuc.ngaydang,danhmuc.idtinhtrang,tinhtrang.idtinhtrang,tinhtrang.tentinhtrang FROM dangnhap,danhmuc,tinhtrang where dangnhap.iddangnhap=danhmuc.iddangnhap and danhmuc.idtinhtrang=tinhtrang.idtinhtrang  ORDER BY iddanhmuc ASC");
                                     $display->execute();
                                     $fetch = $display->fetchAll();                               
 
@@ -52,7 +50,7 @@
                                   
                                   <td><?php echo $row['tendanhmuc']; ?></td>
                                   <td><?php echo $row['mota']; ?></td>
-                                  <td><?php echo $row['admin_user']; ?></td>
+                                  <td><?php echo $row['tendangnhap']; ?></td>
                                   <td><?php echo $row['ngaydang']; ?></td>
                                   <td><?php echo $row['tentinhtrang']; ?></td>
                                 

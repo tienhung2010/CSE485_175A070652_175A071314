@@ -118,33 +118,8 @@
                             <li>
                                 <a href="danh-muc-bai-viet.php">Danh mục bài viết</a>
                             </li>
-                             <li>
-                                <a href="thung-rac.php">Thùng rác</a>
-                            </li>
-
-                            
                         </ul> 
-                    </li>                   
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            
-                            <i class="glyphicon glyphicon-education"></i>&nbsp;&nbsp;Cài Đặt
-                        </a>
-                              <ul class="ml-menu">
-                            <li>
-                                <a href="cai-dat-chung.php">Cài đặt chung</a>
-                            </li>
-                            <li>
-                                <a href="anh-slide.php">Ảnh slide</a>
-                            </li>
-                            <li>
-                                <a href="banner.php">banner</a>
-                            </li>
-                    
-                           
-                        </ul>
-                        
-                    </li>
+                    </li>                  
                        <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             
@@ -156,10 +131,10 @@
 
                               <ul class="ml-menu">
                             <li>
-                                <a href="tat-ca-nguoi-dung.php">Tất cả người dùng</a>
+                                <a href="danh-sach-nguoi-dung.php">Tất cả người dùng</a>
                             </li>
                             <li>
-                                <a href="tao-tai-khoan.php">Tạo tài khoản</a>
+                                <a href="them-nguoi-dung.php">Tạo tài khoản</a>
                             </li>
                            
                         </ul>
@@ -176,13 +151,6 @@
                                     Thư Viện Ảnh
                                 </a>
                             </li>
-                      <li>
-                                <a href="them-hinh-anh.php">
-                                    Thêm tập tin
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
                 </ul><br><br><br>
             
 

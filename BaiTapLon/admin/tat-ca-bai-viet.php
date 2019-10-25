@@ -37,7 +37,7 @@
                                 
                                   <?php
                                     include('connect.php');
-                                    $display = $con->prepare("SELECT admin.iddangnhap,admin.admin_user,danhmuc.iddanhmuc,danhmuc.tendanhmuc,tintuc.idtintuc,tintuc.tieude,tintuc.noidung,tintuc.ngayviet,tintuc.iddanhmuc,tintuc.iddangnhap,tintuc.idtinhtrang,tinhtrang.idtinhtrang,tinhtrang.tentinhtrang FROM admin,tintuc,tinhtrang,danhmuc where admin.iddangnhap=tintuc.iddangnhap and tintuc.idtinhtrang=tinhtrang.idtinhtrang  and danhmuc.iddanhmuc=tintuc.iddanhmuc  ORDER BY idtintuc ASC");
+                                    $display = $con->prepare("SELECT dangnhap.iddangnhap,dangnhap.tendangnhap,danhmuc.iddanhmuc,danhmuc.tendanhmuc,tintuc.idtintuc,tintuc.tieude,tintuc.noidung,tintuc.ngayviet,tintuc.iddanhmuc,tintuc.iddangnhap,tintuc.idtinhtrang,tinhtrang.idtinhtrang,tinhtrang.tentinhtrang FROM dangnhap,tintuc,tinhtrang,danhmuc where dangnhap.iddangnhap=tintuc.iddangnhap and tintuc.idtinhtrang=tinhtrang.idtinhtrang  and danhmuc.iddanhmuc=tintuc.iddanhmuc  ORDER BY idtintuc ASC");
                                     $display->execute();
                                     $fetch = $display->fetchAll();                               
 
@@ -52,7 +52,7 @@
                                   
                                   <td><?php echo $row['tieude']; ?></td>
                                   <td><?php echo $row['tendanhmuc']; ?></td>
-                                  <td><?php echo $row['admin_user']; ?></td>
+                                  <td><?php echo $row['tendangnhap']; ?></td>
                                   <td><?php echo $row['ngayviet']; ?></td>
                                   <td><?php echo $row['tentinhtrang']; ?></td>
                                
@@ -75,21 +75,7 @@
     </div>
 </section>
 
-  <script>
-    function printDiv() {
-        //Get the HTML of div
-        var divElements = document.getElementById("print").innerHTML;
-        //Get the HTML of whole page
-        var oldPage = document.body.innerHTML;
-        //Reset the page's HTML with div's HTML only
-        document.body.innerHTML = "<table></table>" + divElements;
-        //Print Page
-        window.print();
-        //Restore orignal HTML
-        document.body.innerHTML = oldPage;
-
-    }
-    </script>
+  
 <script src="plugins/js/jquery-1.js"></script>
 <script src="plugins/js/jquery.dataTables.min.js"></script>
     <script>

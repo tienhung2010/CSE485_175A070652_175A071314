@@ -10,13 +10,13 @@ body{
     font-family: "Roboto Slab", serif;
 }
 /*css tiêu đề trái*/
-.tintuc,.sukien,.cauhoi{
+.container-tintuc,.container-sukien,.container-cauhoi{
     margin-bottom: 4rem;
 }
 .container-title {
     background-color: rgb(247, 62, 62);
 }
-.menu_trai .title-left li a {
+.MenuLeft .title-left li a {
     color: white;
     font-weight: 450;
 }
@@ -25,11 +25,11 @@ body{
     height: 2.5rem;
 }
 
-.menu_trai .title-left {
+.MenuLeft .title-left {
     position: relative;
 }
 
-.menu_trai .title-left li {
+.MenuLeft .title-left li {
     list-style-type: none;
     display: inline-table;
     height: 2rem;
@@ -37,82 +37,82 @@ body{
     padding-right: 0.5rem;
 }
 
-.menu_trai .title-left li .Truong {
+.MenuLeft .title-left li .DanhSachTruong {
     display: none;
     width: 300px;
     background-color: white;
     z-index: 10;
 }
 
-.menu_trai .title-left li .Truong a {
+.MenuLeft .title-left li .DanhSachTruong a {
     color: black;
 }
 
-.menu_trai .title-left li .Truong a:hover {
+.MenuLeft .title-left li .DanhSachTruong a:hover {
     color: red;
 }
 
-.menu_trai .title-left li .Khoa {
+.MenuLeft .title-left li .DanhSachKhoa {
     z-index: 10;
     display: none;
     width: 400px;
     background-color: white;
 }
 
-.menu_trai .title-left li .Khoa a {
+.MenuLeft .title-left li .DanhSachKhoa a {
     color: black;
 }
 
-.menu_trai .title-left li .Khoa a:hover {
+.MenuLeft .title-left li .DanhSachKhoa a:hover {
     color: red;
 }
 
-.menu_trai .title-left li .Vien {
+.MenuLeft .title-left li .DanhSachVien {
     display: none;
     width: 400px;
     background-color: white;
     z-index: 10;
 }
 
-.menu_trai .title-left li .Vien a {
+.MenuLeft .title-left li .DanhSachVien a {
     color: black;
 }
 
-.menu_trai .title-left li .Vien a:hover {
+.MenuLeft .title-left li .DanhSachVien a:hover {
     color: red;
 }
 
-.menu_trai .title-left li .Trungtam {
+.MenuLeft .title-left li .DanhSachTrungTam {
     display: none;
     width: 400px;
     background-color: white;
     z-index: 10;
 }
 
-.menu_trai .title-left li .Trungtam a {
+.MenuLeft .title-left li .DanhSachTrungTam a {
     color: black;
 }
 
-.menu_trai .title-left li .Trungtam a:hover {
+.MenuLeft .title-left li .DanhSachTrungTam a:hover {
     color: red;
 }
 
-.menu_trai .title-left li:hover .Truong {
+.MenuLeft .title-left li:hover .DanhSachTruong {
     display: block;
     position: absolute;
 }
 
-.menu_trai .title-left li:hover .Khoa {
+.MenuLeft .title-left li:hover .DanhSachKhoa {
     display: block;
     position: absolute;
 }
 
-.menu_trai .title-left li:hover .Vien {
+.MenuLeft .title-left li:hover .DanhSachVien {
     display: block;
     position: absolute;
 }
 
-.menu_trai .title-left li:hover .Trungtam {
+.MenuLeft .title-left li:hover .DanhSachTrungTam {
     display: block;
     position: absolute;
 }
@@ -145,12 +145,12 @@ body{
     background-color: rgb(253, 227, 179);
 }
 
-.Anh {
+.thechua2anh {
     position: relative;
     z-index: 5;
 }
 
-.Anh .container-img:before {
+.thechua2anh .container-img:before {
     content: "";
     position: absolute;
     transform: scaleX(1);
@@ -162,8 +162,7 @@ body{
     bottom: 0px;
 }
 
-.img-left 
- {
+.img-left img {
     width: 340px;
     height: 61.88px;
 }
@@ -311,20 +310,20 @@ body{
 .header-menu.fixed .listmenu .nav-link {
     color:#fff !important;
 }
-.header-menu .Daihoctdt span{
+.header-menu .branding span{
     display: none;
     color:white;
     text-align:left;
     font-size:24px;
     font-weight: bold;
 }
-.header-menu.fixed .Daihoctdt{
+.header-menu.fixed .branding{
     box-sizing: border-box;
 }
-.header-menu .Daihoctdt a:hover{
+.header-menu .branding a:hover{
     text-decoration: none;
 }
-.header-menu.fixed .Daihoctdt span {
+.header-menu.fixed .branding span {
     display: block;
     padding-bottom:0px;
 }
@@ -444,7 +443,7 @@ body{
 
 /*css footer tin tức*/
 @media(max-width:767px) {
-    .top {
+    .reponsiveTop {
         margin-top: 2rem;
     }
 }
@@ -473,7 +472,7 @@ body{
     font-size: 17px;
 }
 
-.event-Date {
+.event-date {
     list-style-type: none;
 }
 
@@ -489,25 +488,25 @@ body{
     transition: 0.3s;
 }
 
-.event-Date li {
+.event-date li {
     padding-top: 0.8rem;
     clear: left;
 }
 
-.event-Date .list1 {
+.event-date .list1 {
     padding-top: 0rem;
 }
 
-.Date-left {
+.date-left {
     float: left;
     width: 8.5rem;
 }
 
-.Date-left .Date {
+.date-left .date {
     font-size: 30px;
 }
 
-.Date-left span {
+.date-left span {
     display: block;
     background-color: #CD2122;
     color: white;
@@ -518,7 +517,7 @@ body{
     margin-right: 0.8rem;
 }
 
-.Date-left .Month:before {
+.date-left .month:before {
     content: "";
     position: absolute;
     transform: scaleX(1);
@@ -553,7 +552,7 @@ body{
 .container-cauhoi{
     margin-bottom:4rem;
 }
-.slide-2{
+.slide-cauhoi2{
     margin-top:2rem;
 }
 .title-cauhoi {
@@ -572,16 +571,16 @@ body{
     text-align: center;
 }
 
-.div-content2 {
+.div-contentCauHoi2 {
     text-align: center;
 }
-.div-img2 .img-TL{
+.div-imgCauHoi2 .img-TL{
     border:1px solid red;
 }
-.div-img2{
+.div-imgCauHoi2{
     position: relative;
 }
-.div-img2 {
+.div-imgCauHoi2 {
     text-align: center;
 }
 

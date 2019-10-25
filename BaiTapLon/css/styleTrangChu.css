@@ -10,21 +10,13 @@ body{
     font-family: "Roboto Slab", serif;
 }
 /*css tiêu đề trái*/
-.login-admin{
-    float:right;
-}
-.login-admin div  button:hover{
-    color:white;
-    background-color:blue;
-    transition:all 0.3s;
-}
-.container-tintuc,.container-sukien,.container-cauhoi{
+.tintuc,.sukien,.cauhoi{
     margin-bottom: 4rem;
 }
 .container-title {
     background-color: rgb(247, 62, 62);
 }
-.MenuLeft .title-left li a {
+.menu_trai .title-left li a {
     color: white;
     font-weight: 450;
 }
@@ -33,11 +25,11 @@ body{
     height: 2.5rem;
 }
 
-.MenuLeft .title-left {
+.menu_trai .title-left {
     position: relative;
 }
 
-.MenuLeft .title-left li {
+.menu_trai .title-left li {
     list-style-type: none;
     display: inline-table;
     height: 2rem;
@@ -45,82 +37,82 @@ body{
     padding-right: 0.5rem;
 }
 
-.MenuLeft .title-left li .DanhSachTruong {
+.menu_trai .title-left li .Truong {
     display: none;
     width: 300px;
     background-color: white;
     z-index: 10;
 }
 
-.MenuLeft .title-left li .DanhSachTruong a {
+.menu_trai .title-left li .Truong a {
     color: black;
 }
 
-.MenuLeft .title-left li .DanhSachTruong a:hover {
+.menu_trai .title-left li .Truong a:hover {
     color: red;
 }
 
-.MenuLeft .title-left li .DanhSachKhoa {
+.menu_trai .title-left li .Khoa {
     z-index: 10;
     display: none;
     width: 400px;
     background-color: white;
 }
 
-.MenuLeft .title-left li .DanhSachKhoa a {
+.menu_trai .title-left li .Khoa a {
     color: black;
 }
 
-.MenuLeft .title-left li .DanhSachKhoa a:hover {
+.menu_trai .title-left li .Khoa a:hover {
     color: red;
 }
 
-.MenuLeft .title-left li .DanhSachVien {
+.menu_trai .title-left li .Vien {
     display: none;
     width: 400px;
     background-color: white;
     z-index: 10;
 }
 
-.MenuLeft .title-left li .DanhSachVien a {
+.menu_trai .title-left li .Vien a {
     color: black;
 }
 
-.MenuLeft .title-left li .DanhSachVien a:hover {
+.menu_trai .title-left li .Vien a:hover {
     color: red;
 }
 
-.MenuLeft .title-left li .DanhSachTrungTam {
+.menu_trai .title-left li .Trungtam {
     display: none;
     width: 400px;
     background-color: white;
     z-index: 10;
 }
 
-.MenuLeft .title-left li .DanhSachTrungTam a {
+.menu_trai .title-left li .Trungtam a {
     color: black;
 }
 
-.MenuLeft .title-left li .DanhSachTrungTam a:hover {
+.menu_trai .title-left li .Trungtam a:hover {
     color: red;
 }
 
-.MenuLeft .title-left li:hover .DanhSachTruong {
+.menu_trai .title-left li:hover .Truong {
     display: block;
     position: absolute;
 }
 
-.MenuLeft .title-left li:hover .DanhSachKhoa {
+.menu_trai .title-left li:hover .Khoa {
     display: block;
     position: absolute;
 }
 
-.MenuLeft .title-left li:hover .DanhSachVien {
+.menu_trai .title-left li:hover .Vien {
     display: block;
     position: absolute;
 }
 
-.MenuLeft .title-left li:hover .DanhSachTrungTam {
+.menu_trai .title-left li:hover .Trungtam {
     display: block;
     position: absolute;
 }
@@ -153,12 +145,12 @@ body{
     background-color: rgb(253, 227, 179);
 }
 
-.thechua2anh {
+.Anh {
     position: relative;
     z-index: 5;
 }
 
-.thechua2anh .container-img:before {
+.Anh .container-img:before {
     content: "";
     position: absolute;
     transform: scaleX(1);
@@ -170,7 +162,8 @@ body{
     bottom: 0px;
 }
 
-.img-left img {
+.img-left 
+ {
     width: 340px;
     height: 61.88px;
 }
@@ -318,20 +311,20 @@ body{
 .header-menu.fixed .listmenu .nav-link {
     color:#fff !important;
 }
-.header-menu .branding span{
+.header-menu .Daihoctdt span{
     display: none;
     color:white;
     text-align:left;
     font-size:24px;
     font-weight: bold;
 }
-.header-menu.fixed .branding{
+.header-menu.fixed .Daihoctdt{
     box-sizing: border-box;
 }
-.header-menu .branding a:hover{
+.header-menu .Daihoctdt a:hover{
     text-decoration: none;
 }
-.header-menu.fixed .branding span {
+.header-menu.fixed .Daihoctdt span {
     display: block;
     padding-bottom:0px;
 }
@@ -451,7 +444,7 @@ body{
 
 /*css footer tin tức*/
 @media(max-width:767px) {
-    .reponsiveTop {
+    .top {
         margin-top: 2rem;
     }
 }
@@ -480,7 +473,7 @@ body{
     font-size: 17px;
 }
 
-.event-date {
+.event-Date {
     list-style-type: none;
 }
 
@@ -496,25 +489,25 @@ body{
     transition: 0.3s;
 }
 
-.event-date li {
+.event-Date li {
     padding-top: 0.8rem;
     clear: left;
 }
 
-.event-date .list1 {
+.event-Date .list1 {
     padding-top: 0rem;
 }
 
-.date-left {
+.Date-left {
     float: left;
     width: 8.5rem;
 }
 
-.date-left .date {
+.Date-left .Date {
     font-size: 30px;
 }
 
-.date-left span {
+.Date-left span {
     display: block;
     background-color: #CD2122;
     color: white;
@@ -525,7 +518,7 @@ body{
     margin-right: 0.8rem;
 }
 
-.date-left .month:before {
+.Date-left .Month:before {
     content: "";
     position: absolute;
     transform: scaleX(1);
@@ -560,7 +553,7 @@ body{
 .container-cauhoi{
     margin-bottom:4rem;
 }
-.slide-cauhoi2{
+.slide-2{
     margin-top:2rem;
 }
 .title-cauhoi {
@@ -579,16 +572,16 @@ body{
     text-align: center;
 }
 
-.div-contentCauHoi2 {
+.div-content2 {
     text-align: center;
 }
-.div-imgCauHoi2 .img-TL{
+.div-img2 .img-TL{
     border:1px solid red;
 }
-.div-imgCauHoi2{
+.div-img2{
     position: relative;
 }
-.div-imgCauHoi2 {
+.div-img2 {
     text-align: center;
 }
 

@@ -1,4 +1,4 @@
-<!doctype html>
+        <!doctype html>
 <html lang="en">
   <head>
     <title>Đại Học Tôn Đức Thắng</title>
@@ -15,31 +15,26 @@
   </head>
   <body>
     <div class="container-fuild container-title"><!--đây là container-title-->
-        <div class="row login-admin">
-          <div class="col-md-6">
-            <a href="admin/index.php"><button class="btn btn-primary">LOGIN</button></a>
-          </div>
-        </div>
         <div class="container">
             <div class="container-title">
             <div class="title"><!--đây là title-->
                 <div class="container-fluid div-title">
                 <div class="row">
-                    <div class="col-md-6 MenuLeft"> <!--đây là title-left-->
+                    <div class="col-md-6 menu_trai"> <!--đây là title-left-->
                     <ul class="title-left">
                         <li>
                             <i class="fa fa-university"></i>
                         </li>
                         <li>
                         <a href="#">Trường</a>                    
-                        <ul class="DanhSachTruong">
+                        <ul class="Truong">
                             <li><a href="#">Trường TCCN Tôn Đức Thắng</a></li>
                             <li><a href="#">Trường quốc tế Việt Nam-Phần Lan</a></li>
                         </ul>
                         </li>
                         <li>
                         <a href="#">Khoa</a>
-                        <ul class="DanhSachKhoa">
+                        <ul class="Khoa">
                             <li><a href="#">Khoa công nghệ thông tin</a></li>
                             <li><a href="#">Khoa dược</a></li>
                             <li><a href="#">Khoa điện-điện tử</a></li>
@@ -62,7 +57,7 @@
                         </li>
                         <li>
                         <a href="#">Viện</a> 
-                        <ul class="DanhSachVien">
+                        <ul class="Vien">
                             <li><a href="#">Viện hợp tác quốc tế và nghiên cứu phát triển</a></li>
                             <li><a href="#">Viện khoa học tính toán</a></li>
                             <li><a href="#">Viện nghiên cứu di truyền và giống</a></li>
@@ -72,7 +67,7 @@
                         </li>
                         <li>
                         <a href="#">Trung Tâm</a> 
-                        <ul class="DanhSachTrungTam">
+                        <ul class="Trungtam">
                             <li><a href="#">TT an toàn lao động và công nghệ môi trường</a></li>
                             <li><a href="#">TT chuyên gia Hàn Quốc</a></li>
                             <li><a href="#">TT công nghệ thông tin ứng dụng</a></li>
@@ -111,7 +106,7 @@
     <div class="container"><!--đây là container img-->
     <div class="container-fluid">
         <div class="img">
-        <div class="container-fluid thechua2anh">
+        <div class="container-fluid Anh">
             <div class="row container-img">
             <div class="col-md-6 img-left">
                 <img src="images/left.png" alt="">
@@ -130,7 +125,7 @@
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="row menu-mother">
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                <div class="branding">
+                <div class="Daihoctdt">
                   <p>
                     <a href="#"><span>ĐẠI HỌC TÔN ĐỨC THẮNG</span></a>
                   </p>
@@ -192,7 +187,7 @@
           </a>
         </div>
     </div><!--đây là slide show-->
-    <div class="container-tintuc"><!--dây là phân thông báo-->
+    <div class="container tintuc"><!--dây là phân thông báo-->
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -274,7 +269,7 @@
         </div>
       </div>
     </div><!--dây là phân thông báo-->
-    <div class="container-sukien"><!--dây là phân sự kiện-->
+    <div class="container sukien"><!--dây là phân sự kiện-->
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -370,7 +365,7 @@
         </div>
       </div>
     </div><!--dây là phân sự kiện-->
-    <div class="container container-cauhoi"><!--đây là phần đặt câu hỏi-tương lai-->
+    <div class="container container cauhoi"><!--đây là phần đặt câu hỏi-tương lai-->
       <div class="container-fluid">
         <div class="row container-cauhoi"><!--đây là title đặt câu hỏi-->
           <div class="col-md-12 div-tittleCauHoi">
@@ -378,7 +373,7 @@
           </div><!--đây là title đặt câu hỏi-->
         </div>
          <div class="container-fluid ahihi">
-            <div class="row slide-cauhoi1">
+         <div class="row slide-cauhoi1">
               <div class="col-md-12">
                 <div class="row">
                   <div class="col-md-4">

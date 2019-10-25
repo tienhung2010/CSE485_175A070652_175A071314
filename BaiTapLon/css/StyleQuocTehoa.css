@@ -7,9 +7,6 @@ body{
     font-size:16px;
     font-family: "Roboto Slab", serif;
 }
-.container{
-    margin-bottom:3rem;
-}
 @media(max-width:768px){
     .col-md-4,.col-md-3{
         margin-top:2rem;
@@ -40,6 +37,7 @@ body{
 .content-QuocTeHoa div a:hover{
     color:#CD2122;
     text-decoration: none;
+    transition: all 0.3s;
 }
 .card-block div a{
     color:#CD2122;
@@ -48,8 +46,22 @@ body{
 .card-block div a:hover{
     text-decoration: none;
     color:green;
+    transition: all 0.3s;
 }
 /*css background-img*/
+.container-bg,.container-SVQT,.container-NLQT,.container-HTQT,.container-HDQTH,.container-CT{
+    margin-top:3rem;
+}
+.a-chitiet{
+    color:rgb(240, 37, 37);
+    font-size:18px;
+    font-weight:bold;
+}
+.a-chitiet:hover{
+    color:green;
+    font-weight:bold;
+    text-decoration: none;
+}
 .carousel-caption{
     position: absolute;
     width:35%;

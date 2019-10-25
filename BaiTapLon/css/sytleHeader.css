@@ -9,6 +9,10 @@ body {
     font-size: 16px;
     font-family: "Roboto Slab", serif;
 }
+.container-header{
+    margin-bottom:2rem;
+    background-color:#f9fadc;
+}
 /*css tiêu đề trái*/
 .container-tintuc,.container-sukien,.container-cauhoi{
     margin-bottom: 4rem;
@@ -142,11 +146,6 @@ body {
 /*css tiêu đề phải*/
 
 /*css img header*/
-
-.container-imgtitle {
-    background-color: rgb(253, 227, 179);
-}
-
 .thechua2anh {
     position: relative;
     z-index: 5;
@@ -173,6 +172,97 @@ body {
     width: 380px;
     height: 92px;
     float: right;
+}/*css img header*/
+/*css menu*/
+.header-menu.fixed {
+ 
+  width: 100%;
+  height: 35px;
+  background-color:#CD2122 ;
+  display: block;
+  box-shadow: 0px 2px 2px rgba(0,0,0,0.5); /*Đổ bóng cho menu*/
+  position: fixed; /*Cho menu cố định 1 vị trí với top và left*/
+  top: 0; /*Nằm trên cùng*/
+  left: 0; /*Nằm sát bên trái*/
+  z-index: 100000; /*Hiển thị lớp trên cùng*/
+  max-width:100%;
+    transition: all ease-in-out 2s;
+	
 }
 
-/*css img header*/
+.header-menu.fixed .listmenu .nav-link {
+    color:#fff !important;
+}
+.header-menu .branding span{
+    display: none;
+    color:white;
+    text-align:left;
+    font-size:24px;
+    font-weight: bold;
+}
+.header-menu.fixed .branding{
+    box-sizing: border-box;
+}
+.header-menu .branding a:hover{
+    text-decoration: none;
+}
+.header-menu.fixed .branding span {
+    display: block;
+    padding-bottom:0px;
+}
+
+.menu-right {
+    z-index: 1;
+}
+
+.navbar {
+    height: 50px;
+    float: right !important;
+}
+
+.navbar li a {
+    color: black !important;
+}
+
+.listmenu a .search-icon {
+    font-size: 1rem;
+}
+
+.menu-right .listmenu li {
+    padding-left: 0.7rem;
+    height: 2rem;
+    display: inline-table;
+    position: relative;
+}
+
+.menu-right .listmenu a {
+    line-height: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.menu-mother .listmenu li a:before {
+    content: "";
+    position: absolute;
+    transform: scaleX(0);
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    width: 100%;
+    height: 2px;
+    background-color: rgb(230, 56, 56);
+    left: 0.4rem;
+    bottom: 0.5rem;
+    transition: all 0.4s ease-in-out 0s;
+    -webkit-transiton: all 0.4s ease-in-out 0s;
+    -moz-transition: all 0.4s ease-in-out 0s;
+}
+
+.menu-mother .listmenu li a:hover:before {
+    transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+}
+.header-menu.fixed .menu-mother .listmenu li a:before{
+    background-color:white;
+}

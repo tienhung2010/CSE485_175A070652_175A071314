@@ -10,8 +10,8 @@ $(document).ready(function(){
             $('.slide-cauhoi1 , .slide-cauhoi2').hide();
          }
         if($(document).scrollTop() >=1200){
-           $('.slide-cauhoi1').slideDown(1900,function(){
-            $('.slide-cauhoi2').slideDown(1600);
+           $('.slide-cauhoi1').slideDown(1500,function(){
+            $('.slide-cauhoi2').slideDown(1500);
            });
         }
         if($(document).scrollTop() >=2000){

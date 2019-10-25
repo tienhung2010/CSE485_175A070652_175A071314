@@ -77,26 +77,19 @@
     <!-- #END# Overlay For Sidebars -->
     <!-- Top Bar -->
     <nav class="navbar">
-        <div class="container-fluid" style="background-color:#f44336;">
-            <div class="navbar-header">
-                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
-                <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="home.php" style="color: #fff;">Quản Lý website</a>
-                <ul class = "nav navbar-right"> 
-                <li class = "dropdown">
-                    <a class = "user dropdown-toggle" data-toggle = "dropdown" href = "#" style="color: #fff;">
-                        <span class = "glyphicon glyphicon-user" style="color: #fff;"></span>
-                        <b class = "caret"></b>
-                    </a>
-                <ul class = "dropdown-menu">
-                    <li>
-                        <a class = "me" href = "logout.php" onclick="if(confirm('Logging out, Thank you and see you soon Admin!') == 0){return false;}"><i class = "glyphicon glyphicon-log-out"></i> Logout</a>
-                    </li>
-                </ul>
-                </li>
-            </ul>
-            </div>
-        </div>
+    <div class="row container-fluid">
+		<div class="col-md-12"  style="background-color:#888; ">
+			<div class="row">
+				<div class="col-md-11">
+                <a class="navbar-brand" href="home-normal.php" style="color: #00000; margin-left:30px">Quản Lý website</a>
+				</div>
+				<div class="col-md-1" style="text-align: right;">
+                <a class = "me navbar-brand " href = "logout.php" onclick="if(confirm('Bạn muốn đăng xuất') == 0){return false;}"></i>Đăng Xuất</a>
+				</div>
+			</div>
+		</div>
+	</div>
+    
     </nav>
     <!-- #Top Bar -->
     <section>
@@ -107,7 +100,7 @@
                 <ul class="list">
                     <li class="header">BẢNG ĐIỀU KHIỂN</li>
                     <li>
-                        <a href="home.php">
+                        <a href="home-normal.php">
                             <i class="glyphicon glyphicon-home"></i>&nbsp;&nbsp;Trang Chủ
                         </a>
                     </li>
@@ -117,42 +110,16 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="danh-sach-bai-viet-nomal.php">Danh Sách bài viết</a>
+                                <a href="danh-sach-bai-viet.php">Danh Sách bài viết</a>
                             </li>
                             <li>
-                                <a href="viet-bai-moi-nomal.php">Viết Bài Mới</a>
+                                <a href="viet-bai-moi.php">Viết Bài Mới</a>
                             </li>
                             <li>
-                                <a href="danh-muc-bai-viet-nomal.php">Danh mục bài viết</a>
+                                <a href="danh-muc-bai-viet.php">Danh mục bài viết</a>
                             </li>
-                             <li>
-                                <a href="thung-rac.php">Thùng rác</a>
-                            </li>
-
-                            
                         </ul> 
-                    </li>                   
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            
-                            <i class="glyphicon glyphicon-education"></i>&nbsp;&nbsp;Cài Đặt
-                        </a>
-                              <ul class="ml-menu">
-                            <li>
-                                <a href="cai-dat-chung.php">Cài đặt chung</a>
-                            </li>
-                            <li>
-                                <a href="anh-slide.php">Ảnh slide</a>
-                            </li>
-                            <li>
-                                <a href="banner.php">banner</a>
-                            </li>
-                    
-                           
-                        </ul>
-                        
-                    </li>
-                    
+                    </li>               
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             
@@ -164,24 +131,9 @@
                                     Thư Viện Ảnh
                                 </a>
                             </li>
-                      <li>
-                                <a href="them-hinh-anh.php">
-                                    Thêm tập tin
-                                </a>
-                            </li>
                         </ul>
                     </li>
                 </ul><br><br><br>
-                <div class="dtime">
-                    <div class="alert alert-info">
-                        <i class="icon-calendar"></i>
-                        <?php
-                        $today = date('y:m:d');
-                        $new = date('l, F d, Y', strtotime($today));
-                        echo $new;
-                        ?>
-                    </div>
-                 </div>
                
             </div>
 
